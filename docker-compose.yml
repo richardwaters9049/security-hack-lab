@@ -1,7 +1,7 @@
 version: "3"
 services:
   vulnerable-web-app:
-    image: cyberxsecurity/dvwa-arm64 # DVWA with arm64 support
+    image: vulnerables/web-dvwa:arm64v8 # Publicly available DVWA image for ARM64
     container_name: dvwa
     ports:
       - "8080:80"
@@ -14,7 +14,7 @@ services:
       - mariadb
 
   mariadb:
-    image: arm64v8/mariadb # Use MariaDB instead of MySQL
+    image: arm64v8/mariadb # Use MariaDB instead of MySQL for ARM64
     container_name: dvwa-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -25,7 +25,7 @@ services:
       - db_data:/var/lib/mysql
 
   vulnerable-nginx:
-    image: nginx:alpine # Nginx image compatible with arm64
+    image: nginx:alpine # Nginx image compatible with ARM64
     container_name: vulnerable-nginx
     volumes:
       - ./vulnerable_files:/usr/share/nginx/html
@@ -35,7 +35,7 @@ services:
       - NGINX_VERSION=1.18.0
 
   vulnerable-ssh:
-    image: rastasheep/ubuntu-sshd:18.04 # Public SSH server image with arm64 support
+    image: rastasheep/ubuntu-sshd:18.04 # Public SSH server image with ARM64 support
     container_name: vulnerable-ssh
     ports:
       - "2222:22"
