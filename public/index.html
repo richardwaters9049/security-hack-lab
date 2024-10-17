@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Hacking Lab</title>
+    <link href="output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold">Security Hacking Lab</h1>
+        <p class="mt-2 text-lg">
+          Your playground to test real-world cybersecurity vulnerabilities
+        </p>
+      </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">
+          Welcome to the Hacking Lab
+        </h2>
+        <p class="text-gray-600 text-center mb-8">
+          This lab provides a safe environment for penetration testers and
+          security enthusiasts to simulate and practice various web application
+          vulnerabilities, weak SSH configurations, and database exploits. Set
+          up in a Docker environment, it's perfect for hands-on learning.
+        </p>
+        <div class="text-center">
+          <a
+            href="#get-started"
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+          Lab Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">Vulnerable Web App</h3>
+            <p class="mt-4 text-gray-600">
+              The lab includes a web application with common vulnerabilities
+              such as SQL injection, XSS, file inclusion, and more. Perfect for
+              testing web attacks.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">
+              SSH Brute-force Testing
+            </h3>
+            <p class="mt-4 text-gray-600">
+              A vulnerable SSH service is available, allowing you to practice
+              brute-force attacks and testing weak configurations.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">Database Exploits</h3>
+            <p class="mt-4 text-gray-600">
+              MariaDB is included, providing a backend for database-related
+              vulnerabilities such as SQL injection, misconfigurations, and
+              privilege escalation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section id="get-started" class="py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+          How to Use the Hacking Lab
+        </h2>
+        <ol class="list-decimal list-inside text-gray-600 space-y-4">
+          <li>
+            <strong>Set up Docker</strong>: Ensure Docker is installed on your
+            machine. If not,
+            <a
+              href="https://www.docker.com/"
+              class="text-blue-500 hover:underline"
+              >download and install Docker</a
+            >.
+          </li>
+          <li>
+            <strong>Clone the lab repository</strong>: Run the command below to
+            clone the lab repository:
+            <pre class="bg-gray-900 text-white p-4 rounded mt-2">
+git clone https://github.com/your-username/security-hack-lab.git</pre
+            >
+          </li>
+          <li>
+            <strong>Run the Docker containers</strong>: Use the following
+            command to start the hacking lab:
+            <pre class="bg-gray-900 text-white p-4 rounded mt-2">
+docker-compose up -d</pre
+            >
+          </li>
+          <li>
+            <strong>Access the web app</strong>: Open your browser and navigate
+            to
+            <a
+              href="http://localhost:8080"
+              class="text-blue-500 hover:underline"
+              >http://localhost:8080</a
+            >
+            to interact with the vulnerable web app.
+          </li>
+          <li>
+            <strong>Use your hacking tools</strong>: You can now use tools like
+            <strong>Burp Suite, OWASP ZAP,</strong> or
+            <strong>SQLMap</strong> to test for vulnerabilities and exploit
+            them.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Example Tools Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+          Tools to Use with the Lab
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Tool 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">Burp Suite</h3>
+            <p class="mt-4 text-gray-600">
+              A comprehensive tool for web vulnerability scanning, intercepting
+              requests, and automated attack simulations.
+            </p>
+          </div>
+
+          <!-- Tool 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">SQLMap</h3>
+            <p class="mt-4 text-gray-600">
+              A powerful open-source tool for automating SQL injection attacks
+              and database takeover.
+            </p>
+          </div>
+
+          <!-- Tool 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 class="text-xl font-bold text-gray-800">OWASP ZAP</h3>
+            <p class="mt-4 text-gray-600">
+              A free security tool for finding vulnerabilities in web
+              applications and testing for XSS, CSRF, and other attacks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>© 2024 Security Hacking Lab. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
