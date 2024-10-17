@@ -1,0 +1,47 @@
+version: "3"
+services:
+  vulnerable-web-app:
+    image: cyberxsecurity/dvwa-arm64 # DVWA with arm64 support
+    container_name: dvwa
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: dvwa_user
+      MYSQL_PASSWORD: dvwapassword
+      MYSQL_DATABASE: dvwa
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: arm64v8/mariadb # Use MariaDB instead of MySQL
+    container_name: dvwa-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: dvwa_user
+      MYSQL_PASSWORD: dvwapassword
+      MYSQL_DATABASE: dvwa
+    volumes:
+      - db_data:/var/lib/mysql
+
+  vulnerable-nginx:
+    image: nginx:alpine # Nginx image compatible with arm64
+    container_name: vulnerable-nginx
+    volumes:
+      - ./vulnerable_files:/usr/share/nginx/html
+    ports:
+      - "8081:80"
+    environment:
+      - NGINX_VERSION=1.18.0
+
+  vulnerable-ssh:
+    image: rastasheep/ubuntu-sshd:18.04 # Public SSH server image with arm64 support
+    container_name: vulnerable-ssh
+    ports:
+      - "2222:22"
+    environment:
+      - ROOT_PASSWORD=weakpassword
+    command: "/usr/sbin/sshd -D"
+
+volumes:
+  db_data:
